@@ -28,11 +28,14 @@ $title.addEventListener("keydown", (e) => {
 });
 
 let timeout = null;
-$docs.addEventListener("keydown", function (e) {
+$docs.addEventListener("keydown", () => {
   clearTimeout(timeout);
 
   timeout = setTimeout(() => {
     caret = applyCaret(caret);
-    console.log(caret);
-  }, 1000);
+  }, 200);
+});
+
+$docs.addEventListener("click", () => {
+  caret = applyCaret(caret);
 });
