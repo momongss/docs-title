@@ -23,4 +23,5 @@ header {
   width: 100vw;
   height: 100vh;
   background-color: pink;
+  outline: 0px solid transparent;
 }

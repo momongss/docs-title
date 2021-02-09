@@ -13,7 +13,7 @@ function setCaretIndex(caret) {
 function applyCaret(caret) {
   const selection = document.getSelection();
   caret = selection.getRangeAt(0);
-  console.log("Caret Set");
+  return caret;
 }
 
 export { setCaretIndex, applyCaret };

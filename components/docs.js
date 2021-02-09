@@ -13,37 +13,26 @@ $title.addEventListener("click", (e) => {
 
 $title.addEventListener("keydown", (e) => {
   console.log(e.key);
-  if (e.key === "Enter") {
-    setCaretIndex();
-    return;
-  }
-  if (e.key === "Escape") {
-    setCaretIndex();
+  if (e.key === "Enter" || e.key === "Escape") {
+    e.preventDefault();
+    setCaretIndex(caret);
+    $docs.focus();
+    console.log($title.innerHTML);
+    if ($title.innerHTML === "") {
+      $title.innerHTML = "제목 없는 문서";
+      titleState = "init";
+    }
     return;
   }
   titleState = "stated";
 });
 
-window.addEventListener("keyup", (e) => {
-  if (e.key === "0") {
-    const selection = document.getSelection();
-    caret = selection.getRangeAt(0);
-  }
-  if (e.key === "1") {
-    const selection = document.getSelection();
-    selection.removeAllRanges();
-    selection.addRange(caret);
-  }
-});
-
-$docs.addEventListener("keyup", (e) => {
-  if (e.key === "Enter") {
-  }
-});
-
 let timeout = null;
-$docs.addEventListener("keyup", function (e) {
+$docs.addEventListener("keydown", function (e) {
   clearTimeout(timeout);
 
-  timeout = setTimeout(applyCaret, 1000);
+  timeout = setTimeout(() => {
+    caret = applyCaret(caret);
+    console.log(caret);
+  }, 1000);
 });
