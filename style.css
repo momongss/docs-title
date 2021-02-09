@@ -1,0 +1,26 @@
+:root {
+  --title-height: 30px;
+}
+
+header {
+  width: 500px;
+}
+
+.title {
+  font-size: 18.5px;
+  text-align: center;
+  display: inline-block;
+  padding: 3px 8px 3px 8px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+}
+
+.title:hover {
+  border: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+.docs {
+  width: 100vw;
+  height: 100vh;
+  background-color: pink;
+}
