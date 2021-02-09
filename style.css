@@ -1,9 +1,41 @@
+@font-face {
+  font-family: "bemin_dohun";
+  src: url(/fonts/배민_도현체.ttf) format("truetype");
+}
+
 :root {
-  --title-height: 30px;
+  --background-color-dark: rgb(47, 52, 55); /* notion dark color */
+  --text-color-white: aliceblue;
+
+  --app-height: 90vh;
+  --docs-margin: 20px;
+  --docs-padding: 12px;
+}
+
+.web-docs-app {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  height: var(--app-height);
+  color: var(--text-color-white);
+  background-color: var(--background-color-dark);
+  border-radius: 15px;
+  padding: 20px;
+
+  font-family: bemin_dohun;
 }
 
 header {
-  width: 500px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 20px;
+}
+
+#logo {
+  font-size: 30px;
+  color: rgb(110, 110, 110);
+  padding-right: 10px;
 }
 
 .title {
@@ -11,17 +43,45 @@ header {
   text-align: center;
   display: inline-block;
   padding: 3px 8px 3px 8px;
-  border: 1px solid transparent;
+  border: 2px solid transparent;
   border-radius: 5px;
 }
 
 .title:hover {
-  border: 1px solid rgba(0, 0, 0, 0.4);
+  border: 2px solid rgba(209, 209, 209, 0.4);
+}
+
+.docs-wrapper {
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  flex: 1;
+  overflow: hidden;
+  background-color: rgb(52, 58, 60);
 }
 
 .docs {
-  width: 100vw;
-  height: 100vh;
-  background-color: pink;
+  padding: var(--docs-padding);
+  margin: 5px;
+  height: 100%;
   outline: 0px solid transparent;
+  background-color: rgb(52, 58, 60);
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+.docs::-webkit-scrollbar {
+  width: 10px;
+}
+
+.docs::-webkit-scrollbar-thumb {
+  background-color: rgb(45, 45, 45);
+  border-radius: 5px;
+}
+
+.container::-webkit-scrollbar-track {
+  background-color: grey;
+  border-radius: 5px;
+  box-shadow: inset 0px 0px 5px white;
 }

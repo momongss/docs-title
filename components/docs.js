@@ -28,7 +28,12 @@ $title.addEventListener("keydown", (e) => {
 });
 
 let timeout = null;
-$docs.addEventListener("keydown", () => {
+$docs.addEventListener("keydown", (e) => {
+  console.log(e.key);
+  if (e.key === "Tab") {
+    e.preventDefault();
+  }
+
   clearTimeout(timeout);
 
   timeout = setTimeout(() => {
